@@ -1,0 +1,80 @@
+.home {
+  background: #15202b;
+  color: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+
+  .inline {
+    display: inline-block;
+  }
+}
+.Home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home .Post {
+  width: 600px;
+  height: 550px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 70px;
+}
+
+.Home .Post .Image {
+  flex: 50%;
+}
+
+.Home .Post .Image img {
+  width: 100%;
+}
+
+.Home .Post .Content {
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.Home .Post .Content .title {
+  flex: 70%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.Home .Post .Content .description {
+  flex: 50%;
+  text-align: center;
+}
+
+.Home .Post .Engagement {
+  flex: 20%;
+  display: grid;
+  place-items: left;
+  margin-left: 20px;
+  text-align: left;
+}
+.Home .Post .Engagement #likeButton {
+  font-size: 30px;
+  color: grey;
+}
+.Home .Post .Engagement #likeButton:hover {
+  cursor: pointer;
+  color: rgb(19, 218, 248);
+}
+.Home .Post .Engagement #likeButton:active {
+  color: rgb(19, 218, 248);
+}
+
+// .Home .Post .del {
+//   display: grid;
+//   align-items: center;
+//   align-content: center;
+// }

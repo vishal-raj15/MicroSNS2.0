@@ -1,0 +1,133 @@
+/* .tweetBox {
+  padding-bottom: 10px;
+  border-bottom: 8px solid var(--twitter-boarder);
+  padding-right: 10px;
+  background-color: var(--twitter-background);
+}
+
+.tweetBox > form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--twitter-background);
+}
+
+.tweetBox__input {
+  padding: 20px;
+  display: flex;
+  background-color: var(--twitter-background);
+}
+
+.tweetBox__input > input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  color: whitesmoke;
+  background-color: var(--twitter-background);
+}
+
+.tweetBox__imageInput {
+  border: none;
+  padding: 10px;
+  background-color: var(--twitter-background);
+}
+
+.tweetBox__tweetButton {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 80px;
+  height: 40px !important;
+  margin-top: 20px !important;
+  margin-left: auto !important;
+} */
+
+.compose-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border: 1px solid rgb(47, 51, 54);
+  -webkit-box-shadow: 0px 5px 5px rgb(47, 51, 54);
+  -moz-box-shadow: 0px 5px 5px rgb(47, 51, 54);
+  box-shadow: 0px 5px 5px rgb(47, 51, 54);
+}
+
+.compose-form-container {
+  display: flex;
+  width: 100%;
+}
+
+.compose-form-textarea {
+  background: none;
+  border: 0;
+  outline: none;
+  width: 100%;
+  min-height: 100px;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  color: white;
+}
+.compose-buttons {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+/* .compose-form-submit {
+    flex: 0 0 auto;
+    padding: 5px 18px;
+    width: auto;
+    line-height: 28px;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    border-radius: 50px;
+    border: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 10px;
+  } */
+
+/* .compose-image-submit {
+    flex: 0 0 auto;
+    padding: 5px 18px;
+    width: auto;
+    line-height: 28px;
+    color: white;
+    border-radius: 50px;
+    border: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 20px;
+  } */
+
+.compose-image-submit {
+  flex: 0 0 auto;
+  padding: 5px 18px;
+  width: auto;
+  line-height: 28px;
+  background-color: rgb(212, 219, 222);
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-left: 0;
+}
+.img {
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.compose-form-submit {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: 80px;
+  height: 40px !important;
+  margin: 20px;
+}

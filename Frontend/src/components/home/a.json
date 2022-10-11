@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "username": "vishal",
+      "name": "visha",
+      "comments.id": 11,
+      "comments.userId": "5",
+      "comments.tweetId": "4",
+      "comments.text": "comment posted by vishal",
+      "comments.createdAt": "2022-09-27T09:22:52.000Z",
+      "comments.updatedAt": "2022-09-27T09:22:52.000Z"
+    },
+    {
+      "username": "test3",
+      "name": "test3",
+      "comments.id": 9,
+      "comments.userId": "3",
+      "comments.tweetId": "4",
+      "comments.text": "comment by userid 3",
+      "comments.createdAt": "2022-09-27T09:21:39.000Z",
+      "comments.updatedAt": "2022-09-27T09:21:39.000Z"
+    },
+    {
+      "username": "test1",
+      "name": "test1",
+      "comments.id": 6,
+      "comments.userId": "1",
+      "comments.tweetId": "4",
+      "comments.text": "can I comment ?",
+      "comments.createdAt": "2022-09-27T09:16:13.000Z",
+      "comments.updatedAt": "2022-09-27T09:16:13.000Z"
+    },
+    {
+      "username": "test1",
+      "name": "test1",
+      "comments.id": 3,
+      "comments.userId": "1",
+      "comments.tweetId": "4",
+      "comments.text": " commnet on this tweeet is opened",
+      "comments.createdAt": "2022-09-27T08:30:53.000Z",
+      "comments.updatedAt": "2022-09-27T08:30:53.000Z"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+body {
+  --twitter-color: #50b7f5;
+  --twitter-background: #15202b;
+
+  --twitter-boarder: #8c8e90;
+  --twitter-u: #7296ac;
+}
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.App {
+  background-color: var(--twitter-background);
+  height: 100vh;
+  overflow: hidden;
+}
