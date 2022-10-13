@@ -1,6 +1,6 @@
 {
   "name": "MicroSNS-Frontend",
-  "proxy": "http://localhost:3001",
+  "proxy": "http://104.198.218.194/:3001",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
