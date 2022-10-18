@@ -1,8 +1,7 @@
 {
   "name": "MicroSNS-Frontend",
-  "proxy": "http://104.198.218.194/:3001",
   "version": "0.1.0",
-  "private": true,
+  "homepage": ".",
   "dependencies": {
     "@coreui/coreui": "^4.2.2",
     "@coreui/react": "^4.4.0",

@@ -19,7 +19,7 @@ const Register = () => {
     console.log(" registereing ........ ");
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/api/users/addUser", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/users/addUser`, {
         name: name,
         username: username,
         email: email,

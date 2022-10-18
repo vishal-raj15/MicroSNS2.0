@@ -1,6 +1,7 @@
 {
   "name": "sequelize-basics",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "sequelize complete",
   "main": "server.js",
   "scripts": {

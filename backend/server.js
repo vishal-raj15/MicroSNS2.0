@@ -42,7 +42,7 @@ const PORT = process.env.APP_PORT || 3001;
 const IP = "104.198.218.194";
 
 // server
-app.listen(PORT, IP, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
 

@@ -22,7 +22,9 @@ const Sidebar = () => {
   const history = useHistory();
 
   const signOut = async () => {
-    const response = await axios.get("http://localhost:3001/api/users/logout");
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/users/logout`
+    );
 
     // const response = await axiosJWT.get(
     //   "http://localhost:3001/api/users/logout",

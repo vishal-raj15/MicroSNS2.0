@@ -30,7 +30,9 @@ const Feed = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/users/token");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/users/token`
+      );
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       console.log(" frontend user details ", decoded);
@@ -47,7 +49,7 @@ const Feed = () => {
       }
     }
   };
-  const axiosJWT = axios.create();
+  const axiosJWT = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
   axiosJWT.interceptors.request.use(
     async (config) => {
