@@ -19,3 +19,5 @@
 --------------------------------
 
 #### run npm start inside backend && npm start inside frontend
+
+--- deploying it

@@ -25,7 +25,7 @@ function ComposeForm() {
     refreshToken();
     // upload();
     //getUsers();
-  });
+  }, []);
 
   const refreshToken = async () => {
     try {

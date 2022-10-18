@@ -29,7 +29,7 @@ const Comment = (props) => {
 
   useEffect(() => {
     refreshToken();
-  });
+  }, []);
 
   const refreshToken = async () => {
     try {

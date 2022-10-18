@@ -39,18 +39,18 @@ const Post = (props) => {
   const [showLike, setShowLike] = useState(false);
   const [postusername, setPostusername] = useState("");
   const [postname, setPostname] = useState("");
-  const date = props.createdAt;
+  const [likeCounter, setLikeCounter] = useState(props.likes);
 
+  const date = props.createdAt;
   const history = useHistory();
 
   useEffect(() => {
-    refreshToken();
+    //refreshToken();
     getUsername(props.userId);
-
     //getComments();
     iLiked(props.id);
     //getUsers();
-  });
+  }, []);
 
   const refreshToken = async () => {
     try {
@@ -87,6 +87,7 @@ const Post = (props) => {
         setName(decoded.name);
         setUserId(decoded.userId);
         setExpire(decoded.exp);
+        //setLikeCounter(props.likes);
       }
       return config;
     },
@@ -94,50 +95,6 @@ const Post = (props) => {
       return Promise.reject(error);
     }
   );
-
-  // const getUsers = async () => {
-  //   const response = await axiosJWT.get("http://localhost:3001/api/users/all", {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  //   //console.log("check token ", token);
-
-  //   setUsers(response.data);
-  //   console.log("they are the users ", response.data);
-  // };
-
-  // const getPosts = async () => {
-  //   const response = await axiosJWT.get(
-  //     "http://localhost:3001/api/users/getPosts",
-  //     {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     }
-  //   );
-  //   const data = response.data;
-  //   setPosts(data.data);
-
-  //   console.log("they are the posts ", data.data);
-  // };
-
-  // const logout = async () => {
-  //   const response = await axios.get("http://localhost:3001/api/users/logout");
-
-  //   // const response = await axiosJWT.get(
-  //   //   "http://localhost:3001/api/users/logout",
-  //   //   {
-  //   //     headers: {
-  //   //       Authorization: `Bearer ${token}`,
-  //   //     },
-  //   //   }
-  //   // );
-
-  //   if (response) console.log(" logged out ");
-  //   else console.log(" error ");
-  //   history.push("/");
-  // };
 
   const deleteTweet = async (uid, pid) => {
     const decoded = jwt_decode(token);
@@ -187,6 +144,8 @@ const Post = (props) => {
 
     if (showLike) {
       setShowLike(false);
+
+      console.log(" likes count ", likeCounter);
       return axiosJWT
         .post(
           "http://localhost:3001/api/users/unlike",
@@ -209,6 +168,7 @@ const Post = (props) => {
         });
     } else {
       setShowLike(true);
+
       return axiosJWT
         .post(
           "http://localhost:3001/api/users/likeTweet",
@@ -443,15 +403,17 @@ const Post = (props) => {
                 flexWrap: "wrap",
               }}
             >
-              <FavoriteIcon
+              <button
                 id="like"
                 fontSize="small"
                 style={{ color: "rgb(240, 46, 124)" }}
                 onClick={() => {
+                  setLikeCounter(likeCounter + 1);
+
                   likeTweet(props.id);
                 }}
               />
-              <p style={{ color: "rgb(240, 46, 124)" }}> {props.likes}</p>
+              <p style={{ color: "rgb(240, 46, 124)" }}> {likeCounter}</p>
             </div>
           ) : (
             <>
@@ -462,15 +424,16 @@ const Post = (props) => {
                   flexWrap: "wrap",
                 }}
               >
-                <FavoriteIcon
+                <button
                   id="like"
                   fontSize="small"
                   style={{ color: "rgb(176, 174, 174)" }}
                   onClick={() => {
+                    setLikeCounter(likeCounter - 1);
                     likeTweet(props.id);
                   }}
                 />
-                <p style={{ color: "rgb(176, 174, 174)" }}> {props.likes}</p>
+                <p style={{ color: "rgb(176, 174, 174)" }}> {likeCounter}</p>
               </div>
             </>
           )}
