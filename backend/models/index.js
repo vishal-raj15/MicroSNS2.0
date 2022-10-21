@@ -13,6 +13,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   },
 });
 
+console.log(" lets connect the sequalze ....");
 sequelize
   .authenticate()
   .then(() => {
