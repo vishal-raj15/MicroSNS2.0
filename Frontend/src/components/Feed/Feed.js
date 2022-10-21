@@ -56,7 +56,7 @@ const Feed = () => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
         const response = await axios.get(
-          "http://localhost:3001/api/users/token"
+          `${process.env.REACT_APP_API_URL}/users/token`
         );
         console.log(" this interceptor has been trigerred ");
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
@@ -83,11 +83,14 @@ const Feed = () => {
   );
 
   const getUsers = async () => {
-    const response = await axiosJWT.get("http://localhost:3001/api/users/all", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axiosJWT.get(
+      `${process.env.REACT_APP_API_URL}/users/all`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     //console.log("check token ", token);
 
     setUsers(response.data);
@@ -96,7 +99,7 @@ const Feed = () => {
 
   const getPosts = async () => {
     const response = await axiosJWT.get(
-      "http://localhost:3001/api/users/getPosts",
+      `${process.env.REACT_APP_API_URL}/users/getPosts`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -110,7 +113,9 @@ const Feed = () => {
   };
 
   const logout = async () => {
-    const response = await axios.get("http://localhost:3001/api/users/logout");
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/users/logout`
+    );
 
     // const response = await axiosJWT.get(
     //   "http://localhost:3001/api/users/logout",
@@ -126,33 +131,33 @@ const Feed = () => {
     history.push("/");
   };
 
-  const deleteTweet = async (uid, pid) => {
-    const decoded = jwt_decode(token);
-    console.log("decoded ", decoded);
-    console.log(" uid ", uid);
-    console.log(" pid ", pid);
+  // const deleteTweet = async (uid, pid) => {
+  //   const decoded = jwt_decode(token);
+  //   console.log("decoded ", decoded);
+  //   console.log(" uid ", uid);
+  //   console.log(" pid ", pid);
 
-    if (String(decoded.userId) === String(uid)) {
-      console.log(" let's see ");
-      const response = await axios.delete(
-        `http://localhost:3001/api/users/post/${pid}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          data: {
-            id: pid,
-          },
-        }
-      );
+  //   if (String(decoded.userId) === String(uid)) {
+  //     console.log(" let's see ");
+  //     const response = await axios.delete(
+  //       `${process.env.REACT_APP_API_URL}/users/post/${pid}`,
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //         data: {
+  //           id: pid,
+  //         },
+  //       }
+  //     );
 
-      return response;
-    } else {
-      console.log(" unauthorized access ");
-      alert(" unauthorized ");
-    }
-  };
+  //     return response;
+  //   } else {
+  //     console.log(" unauthorized access ");
+  //     alert(" unauthorized ");
+  //   }
+  // };
 
   return (
     <div className="feed">

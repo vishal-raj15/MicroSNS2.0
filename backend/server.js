@@ -8,7 +8,7 @@ const fileUpload = require("express");
 const corsOptions = {
   credentials: true,
   preflightContinue: true,
-  origin: ["http://http://104.198.218.194:3000", "http://localhost:3000"],
+  origin: ["http://104.198.218.194:3000", "http://localhost:3000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   exposedHeaders: ["X-auth-token"],
 };
@@ -43,7 +43,7 @@ const IP = "104.198.218.194";
 
 // server
 app.listen(8800, () => {
-  console.log(`Server is running on ${PORT}`);
+  console.log(`Server is running on port 8800`);
 });
 
 // to avoid if there's any old server already running because

@@ -150,7 +150,7 @@ const Post = (props) => {
       console.log(" likes count ", likeCounter);
       return axiosJWT
         .post(
-          "http://localhost:3001/api/users/unlike",
+          `${process.env.REACT_APP_API_URL}/users/unlike`,
           {
             userId: parseInt(uid),
             tweetId: pid,
@@ -173,7 +173,7 @@ const Post = (props) => {
 
       return axiosJWT
         .post(
-          "http://localhost:3001/api/users/likeTweet",
+          `${process.env.REACT_APP_API_URL}/users/likeTweet`,
           {
             userId: parseInt(uid),
             tweetId: pid,
@@ -198,10 +198,13 @@ const Post = (props) => {
     const uid = decoded.userId;
     console.log(" checking it...");
 
-    const resp = await axios.post("http://localhost:3001/api/users/iLiked", {
-      userId: parseInt(uid),
-      tweetId: pid,
-    });
+    const resp = await axios.post(
+      `${process.env.REACT_APP_API_URL}/users/iLiked`,
+      {
+        userId: parseInt(uid),
+        tweetId: pid,
+      }
+    );
 
     if (resp.data.data != null) {
       console.log(" liked ok ", pid);
@@ -219,7 +222,7 @@ const Post = (props) => {
     console.log("----------------------------------------------", comment);
     try {
       const auth = await axiosJWT.post(
-        "http://localhost:3001/api/users/comment/add",
+        `${process.env.REACT_APP_API_URL}/users/comment/add`,
         {
           userId: parseInt(userId),
           tweetId: props.id,
@@ -278,7 +281,7 @@ const Post = (props) => {
 
     try {
       const userinfo = await axios.get(
-        `http://localhost:3001/api/users/getuser/${id}`,
+        `${process.env.REACT_APP_API_URL}/users/getuser/${id}`,
         {
           params: {
             id: id,
@@ -300,7 +303,7 @@ const Post = (props) => {
     if (String(userId) === String(uid)) {
       try {
         const res = await axiosJWT.post(
-          `http://localhost:3001/api/users/comment`,
+          `${process.env.REACT_APP_API_URL}/users/comment`,
           {
             id: cid,
             tweetId: pid,

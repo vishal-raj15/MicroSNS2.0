@@ -58,7 +58,7 @@ function ComposeForm() {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
         const response = await axios.get(
-          "http://localhost:3001/api/users/token"
+          `${process.env.REACT_APP_API_URL}/users/token`
         );
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
@@ -107,7 +107,7 @@ function ComposeForm() {
         let s = await response.json();
         console.log(s.secure_url);
         const res = await axiosJWT.post(
-          "http://localhost:3001/api/users/post",
+          `${process.env.REACT_APP_API_URL}/users/post`,
           {
             text: description,
             media: s.secure_url,
